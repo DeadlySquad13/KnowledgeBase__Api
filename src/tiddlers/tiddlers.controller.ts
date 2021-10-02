@@ -8,6 +8,6 @@ export class TiddlersController {
   }
   @Get()
   findAll(): string {
-    return 'Return all tiddler';
+    return 'Return all tiddlers';
   }
 }

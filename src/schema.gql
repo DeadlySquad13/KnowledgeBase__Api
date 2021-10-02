@@ -3,5 +3,6 @@
 # ------------------------------------------------------
 
 type Query {
-  sayHello: String!
+  getUser: String!
+  createUser: String!
 }
