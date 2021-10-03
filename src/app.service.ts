@@ -1,14 +1,19 @@
-import { Query, Resolver } from '@nestjs/graphql'
+import { Args, Mutation, Query, Resolver } from '@nestjs/graphql'
+
+const ultraMegaDB = {
+  name: ''
+}
 
 @Resolver()
 export class AppService {
   @Query(() => String)
   getUser(): string {
-    return 'Sanya';
+    return ultraMegaDB.name;
   }
 
-  @Query(() => String)
-  createUser(name: string): string {
-    return `${name} was created!`;
+  @Mutation(() => String)
+  createUser(@Args('name', { type: () => String }) name: string): string {
+    ultraMegaDB.name = name;
+    return ultraMegaDB.name;
   }
 }

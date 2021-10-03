@@ -4,5 +4,8 @@
 
 type Query {
   getUser: String!
-  createUser: String!
+}
+
+type Mutation {
+  createUser(name: String!): String!
 }
